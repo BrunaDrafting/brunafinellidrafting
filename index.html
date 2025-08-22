@@ -1,0 +1,269 @@
+<!-- =====================
+FILES FOR A MULTI‑PAGE SITE
+Copy each block into its own file in your repo.
+Recommended structure:
+  / (root)
+   ├── index.html
+   ├── process.html
+   ├── story.html
+   ├── work.html
+   ├── contact.html
+   └── styles.css
+===================== -->
+
+<!-- =====================
+FILE: styles.css
+===================== -->
+:root{
+  --ink:#1b1b1b;        /* text */
+  --char:#2a2a2a;       /* headings */
+  --bone:#f6f3ed;       /* page bg */
+  --sand:#ece6de;       /* panels */
+  --clay:#d8cfc3;       /* accents */
+  --olive:#6f7463;      /* subtle lines */
+  --wood:#8a6f51;       /* warm highlight */
+  --line:rgba(0,0,0,.08);
+  --radius:18px; --radius-sm:12px; --shadow:0 20px 45px rgba(0,0,0,.06)
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bone);color:var(--char);font:16px/1.65 system-ui,-apple-system,Segoe UI,Inter,Helvetica,Arial}
+a{color:inherit;text-decoration:none}
+.container{max-width:1120px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;background:rgba(246,243,237,.85);backdrop-filter:saturate(120%) blur(8px);border-bottom:1px solid var(--line);z-index:20}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(145deg,var(--sand),var(--clay));box-shadow:inset 0 0 0 1px var(--line)}
+.brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.3px}
+nav a{padding:8px 12px;border-radius:999px}
+nav a.active, nav a:hover{background:rgba(0,0,0,.04)}
+.btn{display:inline-block;padding:12px 18px;border-radius:12px;border:1px solid var(--line);background:white}
+.btn.primary{background:var(--wood);color:#fff;border:none;font-weight:700}
+.hero{padding:84px 0 40px}
+.hero h2{font-size:40px;line-height:1.1;margin:0 0 10px}
+.muted{color:#6b6b6b}
+.card{background:linear-gradient(180deg,#fff, var(--sand));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+.pad{padding:28px}
+.grid{display:grid;gap:22px}
+@media(min-width:900px){.grid-2{grid-template-columns:1.1fr .9fr}.grid-3{grid-template-columns:repeat(3,1fr)}}
+.thumb{aspect-ratio:16/11;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.thumb img{width:100%;height:100%;object-fit:cover}
+section{padding:42px 0}
+footer{padding:52px 0;color:#7a7a7a;text-align:center;border-top:1px solid var(--line)}
+.list{display:grid;gap:14px}
+.kicker{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#7a7a7a}
+.hr{height:1px;background:var(--line);margin:20px 0}
+
+/* Forms */
+input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(0,0,0,.12);background:#fff;color:var(--char)}
+textarea{min-height:120px;resize:vertical}
+
+/* Utility */
+.center{text-align:center}
+
+/* =====================
+FILE: index.html
+===================== -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bruna Finelli — Drafting & 3D Visuals</title>
+<link rel="stylesheet" href="styles.css">
+<meta name="description" content="Japandi‑inspired drafting, floor plans, and isometric visuals. Gold Coast • Brisbane.">
+</head><body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="/"><div class="logo"></div><h1>Bruna Finelli · Drafting & 3D</h1></a>
+    <nav>
+      <a href="/work.html">Work</a>
+      <a href="/process.html">Process</a>
+      <a href="/story.html">Story</a>
+      <a href="/contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero grid grid-2">
+    <div class="card pad">
+      <span class="kicker">Japandi calm • Architectural clarity</span>
+      <h2>Floor plans & isometric 3D that make small spaces feel alive.</h2>
+      <p class="muted">I help owners and builders present cabins, studios, and homes with serene, human‑centred visuals — clean plans for certifiers and warm imagery that resonates with clients.</p>
+      <div class="hr"></div>
+      <div class="list">
+        <div>• 2D floor plans with furniture layouts</div>
+        <div>• Isometric/axonometric drawings with garden context</div>
+        <div>• Site plans with setbacks & sheds</div>
+        <div>• Marketing boards for websites</div>
+      </div>
+      <p><a class="btn primary" href="/contact.html">Start a project</a> <a class="btn" href="/work.html">See work</a></p>
+    </div>
+    <div class="card pad">
+      <div class="thumb"><img alt="Cabin exterior mood" src="https://images.unsplash.com/photo-1505692794403-34d4982f88aa?q=80&w=1400&auto=format&fit=crop"></div>
+      <p class="muted" style="margin-top:8px">Mood image — final style tailored to your project.</p>
+    </div>
+  </section>
+
+  <section>
+    <h3 class="kicker center">Services</h3>
+    <div class="grid grid-3">
+      <div class="card pad"><b>2D Floor Plans</b><br/>Dimensioned layouts with clear room naming and compact furniture suggestions.</div>
+      <div class="card pad"><b>Isometric Visuals</b><br/>Angled drawings with grass/planting so it reads like a real cabin in place.</div>
+      <div class="card pad"><b>Site Plans</b><br/>Setbacks, boundaries, shed distances, ready for certification.</div>
+    </div>
+    <p class="center muted" style="margin-top:10px">Typical package from <b>$300 per cabin</b> (plan + isometric). Realistic renders available on request.</p>
+  </section>
+</main>
+<footer>© <script>document.write(new Date().getFullYear())</script> Bruna Finelli — Drafting & 3D</footer>
+</body></html>
+
+<!-- =====================
+FILE: process.html
+===================== -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Process — Bruna Finelli</title>
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="/"><div class="logo"></div><h1>Bruna Finelli · Drafting & 3D</h1></a>
+    <nav>
+      <a href="/work.html">Work</a>
+      <a href="/process.html" class="active">Process</a>
+      <a href="/story.html">Story</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero">
+    <h2>Process</h2>
+    <p class="muted">Calm, transparent steps. You’ll always know where things are up to.</p>
+  </section>
+  <section class="grid grid-3">
+    <div class="card pad"><b>1) Listen</b><br/>Brief, goals, references, site details. I tune into the feeling you want the space to carry.</div>
+    <div class="card pad"><b>2) Sketch</b><br/>Initial plan + isometric direction. We review together and refine quickly.</div>
+    <div class="card pad"><b>3) Finalise</b><br/>Deliver polished PDFs/PNGs (and DWG if needed) ready for certifier or website.
+      <div class="muted" style="margin-top:8px">Realistic renders are possible as an add‑on (higher cost due to technical time).</div>
+    </div>
+  </section>
+  <section>
+    <h3>Process board image</h3>
+    <p class="muted">Drop your process image here (e.g., a single landscape board combining plan + isometric). Use 1600–2000px wide for crisp display.</p>
+    <div class="card pad center"><div class="thumb"><img alt="placeholder" src="https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1400&auto=format&fit=crop"></div></div>
+  </section>
+</main>
+<footer>© <script>document.write(new Date().getFullYear())</script> Bruna Finelli — Drafting & 3D</footer>
+</body></html>
+
+<!-- =====================
+FILE: story.html
+===================== -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Story — Bruna Finelli</title>
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="/"><div class="logo"></div><h1>Bruna Finelli · Drafting & 3D</h1></a>
+    <nav>
+      <a href="/work.html">Work</a>
+      <a href="/process.html">Process</a>
+      <a href="/story.html" class="active">Story</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero grid grid-2">
+    <div>
+      <h2>Story</h2>
+      <p class="muted">Japandi isn’t a look — it’s a feeling. Calm utility. Natural warmth. Enough detail to feel human, never so much that it becomes noise.</p>
+      <p>I studied Architecture and cut my teeth preparing plans that had to be crystal‑clear for builders and certifiers. Over time I began shaping visuals that also feel poetic: isometric drawings with soft landscaping that help clients imagine life inside the space.</p>
+      <p>Today I work with owners and small builders across the Gold Coast and Brisbane, translating ideas into clean documentation and approachable imagery.</p>
+    </div>
+    <div class="card pad"><div class="thumb"><img alt="studio mood" src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?q=80&w=1400&auto=format&fit=crop"></div></div>
+  </section>
+</main>
+<footer>© <script>document.write(new Date().getFullYear())</script> Bruna Finelli — Drafting & 3D</footer>
+</body></html>
+
+<!-- =====================
+FILE: work.html
+===================== -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Bruna Finelli</title>
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="/"><div class="logo"></div><h1>Bruna Finelli · Drafting & 3D</h1></a>
+    <nav>
+      <a href="/work.html" class="active">Work</a>
+      <a href="/process.html">Process</a>
+      <a href="/story.html">Story</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero">
+    <h2>Selected work</h2>
+    <p class="muted">Swap these mood images for your plans/isometrics/renders when ready. Keep a calm, consistent palette.</p>
+  </section>
+  <section class="grid grid-3">
+    <div class="card pad"><div class="thumb"><img alt="Cabin A" src="https://images.unsplash.com/photo-1600585154340-1e4ce9a4c63b?q=80&w=1400&auto=format&fit=crop"></div><p><b>Compact Cabin</b><br/><span class="muted">Plan + isometric for 28 m² studio.</span></p></div>
+    <div class="card pad"><div class="thumb"><img alt="Cabin B" src="https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1400&auto=format&fit=crop"></div><p><b>Garden Studio</b><br/><span class="muted">Marketing board for website.</span></p></div>
+    <div class="card pad"><div class="thumb"><img alt="Interior" src="https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1400&auto=format&fit=crop"></div><p><b>Japandi Interior</b><br/><span class="muted">Soft material palette + joinery detail.</span></p></div>
+  </section>
+</main>
+<footer>© <script>document.write(new Date().getFullYear())</script> Bruna Finelli — Drafting & 3D</footer>
+</body></html>
+
+<!-- =====================
+FILE: contact.html
+===================== -->
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Bruna Finelli</title>
+<link rel="stylesheet" href="styles.css">
+</head><body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="/"><div class="logo"></div><h1>Bruna Finelli · Drafting & 3D</h1></a>
+    <nav>
+      <a href="/work.html">Work</a>
+      <a href="/process.html">Process</a>
+      <a href="/story.html">Story</a>
+      <a href="/contact.html" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="container">
+  <section class="hero grid grid-2">
+    <div class="card pad">
+      <h2>Tell me about your project</h2>
+      <p class="muted">Share size, timing, any references, and what feeling you want the space to carry.</p>
+      <form action="mailto:brunafinellifr@gmail.com" method="post" enctype="text/plain">
+        <input name="Name" placeholder="Your name" required>
+        <input name="Email" placeholder="Your email" required>
+        <textarea name="Message" placeholder="Project type, size, goals"></textarea>
+        <button class="btn primary" type="submit">Email Bruna</button>
+        <a class="btn" style="margin-left:8px" href="mailto:brunafinellifr@gmail.com">Open email</a>
+      </form>
+    </div>
+    <div class="card pad">
+      <b>Contact</b>
+      <p class="muted">Email: <a href="mailto:brunafinellifr@gmail.com">brunafinellifr@gmail.com</a><br/>Location: Gold Coast · Brisbane</p>
+      <div class="hr"></div>
+      <b>Deliverables</b>
+      <ul>
+        <li>PDF boards for web/print</li>
+        <li>High‑res PNGs (transparent or solid backgrounds)</li>
+        <li>DWG/DXF on request</li>
+      </ul>
+    </div>
+  </section>
+</main>
+<footer>© <script>document.write(new Date().getFullYear())</script> Bruna Finelli — Drafting & 3D</footer>
+</body></html>
